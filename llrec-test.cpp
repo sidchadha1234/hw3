@@ -3,6 +3,7 @@
 #include <functional>
 #include "llrec.h"
 #include "llrec.cpp"
+#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -89,7 +90,9 @@ int main(int argc, char* argv[])
     // -----------------------------------------------
     // Feel free to update any code below this point
     // -----------------------------------------------
+    
     Node* head = readList(argv[1]);
+    
     cout << "Original list: ";
     print(head);
 
@@ -100,13 +103,19 @@ int main(int argc, char* argv[])
     Node *larger;
     int pivot = 8;
     llpivot(head, smaller, larger, pivot);
+    dealloc(head);
 
     print(smaller);
     print(larger);
 
     //using larger to test llfilter
-    print(llfilter(larger, x()));
-    
+    larger = llfilter(larger, x());
+    print(larger);
+
+    dealloc(smaller);
+    dealloc(larger);
+
     return 0;
+
 
 }

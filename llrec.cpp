@@ -12,7 +12,7 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot){
   
   Node* temp = head;
   head = NULL;
-  
+
   if(temp!=nullptr){ //check that temp is not null
     if(temp -> val > pivot){//if it is great or equal to pivot, put it in larger
       larger = temp;

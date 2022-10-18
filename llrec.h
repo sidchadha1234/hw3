@@ -83,18 +83,19 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
 
     //end of recursion
-    if(head == NULL) return head; 
+    if(head == nullptr) return nullptr; 
 
 
-    Node* temp;
-    temp = llfilter(head->next, pred); //recursive call into temp
+    Node* temp = llfilter(head->next, pred); //recursive call into temp
     if(pred(head->val)){ //if it meets the comparator call, delete it from the list
         delete head;
-        return temp; 
+        return temp;  
     }
     else{
         head->next = temp; //if not move onto the next call
+       return head;
     }
+
   return head;
 }
 
