@@ -4,14 +4,15 @@ make
 ./llrec-test llrec-test1.in
 
 
-To compile the third part into an exceutable:
+To compile and run the third part into an exceutable:
 g++ -g -Wall stacktest.cpp -o test
+./test
 
 The fourth part is attached
 
 To compile the fifth part:
 cd hw3
-cd heap-test
+cd heap_test
 make
 make test
 
