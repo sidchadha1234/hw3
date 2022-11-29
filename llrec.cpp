@@ -8,8 +8,31 @@
 
 void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot){
 
-  
-  
+  //set the first values of even and odd to NULL
+  //even->next=in
+
+  if(head==nullptr){
+    smaller = nullptr;
+    larger = nullptr;
+   return ;
+  }
+
+  else{
+    llpivot(head->next, smaller, larger, pivot);
+    if(head->val<=pivot){
+      //supposed to add if statements inside of these?
+      head->next = smaller;
+      smaller=head;
+    }
+    if(head->val>pivot){
+      head->next = larger;
+      larger=head;
+    }
+    head = nullptr;
+  }
+  }
+/*
+
   Node* temp = head;
   head = NULL;
 
@@ -29,4 +52,4 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot){
 
   }
 
-
+*/ 
